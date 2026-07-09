@@ -1,0 +1,153 @@
+<section id="projects" class="bg-white py-28">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <!-- Heading -->
+
+        <div class="text-center mb-20">
+
+            <p class="uppercase tracking-[0.3em] text-[#083336]/70 mb-3">
+                Portfolio
+            </p>
+
+            <h2 class="text-5xl font-bold text-[#083336]">
+                Sample Work
+            </h2>
+
+        </div>
+
+        <!-- Grid -->
+
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
+
+            <% projects.forEach(project => { %>
+
+                <div
+                    class="project-card group cursor-pointer"
+                    data-id="<%= project.id %>">
+
+                    <!-- Card -->
+
+                    <div
+                        class="relative rounded-3xl overflow-hidden border border-gray-200 bg-white transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+
+                        <!-- Image -->
+
+                        <div class="aspect-video bg-[#F7F7F7] flex items-center justify-center">
+
+                            <img
+                                src="<%= project.image %>"
+                                alt="<%= project.title %>"
+                                class="w-full h-full object-contain p-4">
+
+                        </div>
+
+                        <!-- Overlay -->
+
+                        <div
+                            class="absolute inset-0 bg-[#83C5BE]/45 backdrop-blur-[2px]
+                                   flex items-center justify-center
+                                   transition-all duration-500
+                                   group-hover:opacity-0">
+
+                            <button
+                                class="bg-white/90 text-[#083336]
+                                       px-8 py-3 rounded-full
+                                       font-semibold
+                                       tracking-wide
+                                       shadow-lg">
+
+                                View Project ↗
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Title -->
+
+                    <div class="pt-6">
+
+                        <h3 class="text-2xl font-bold text-[#083336]">
+
+                            <%= project.title %>
+
+                        </h3>
+
+                    </div>
+
+                </div>
+
+            <% }) %>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= PROJECT MODAL ================= -->
+
+<div
+    id="projectOverlay"
+    class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden items-center justify-center z-[999] px-6">
+
+    <div
+        id="projectModal"
+        class="bg-white rounded-3xl
+               w-full
+               max-w-5xl
+               max-h-[90vh]
+               overflow-y-auto
+               translate-y-20
+               opacity-0
+               transition-all
+               duration-500">
+
+        <div class="relative">
+
+            <button
+                id="closeProject"
+                class="absolute top-5 right-5 w-12 h-12 rounded-full bg-white shadow-lg text-3xl text-[#083336] hover:bg-gray-100 transition">
+
+                ×
+
+            </button>
+
+            <img
+                id="modalImage"
+                class="w-full h-[450px] object-contain bg-[#F7F7F7]">
+
+        </div>
+
+        <div class="p-10">
+
+            <h2
+                id="modalTitle"
+                class="text-4xl font-bold text-[#083336] mb-6">
+            </h2>
+
+            <p
+                id="modalDescription"
+                class="text-gray-600 leading-8 mb-8">
+            </p>
+
+            <a
+                id="modalGithub"
+                target="_blank"
+                class="inline-flex items-center gap-2 bg-[#083336] text-white px-8 py-4 rounded-full hover:bg-[#0A4346] transition">
+
+                View Project ↗
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script id="project-data" type="application/json">
+<%- JSON.stringify(projects) %>
+</script>
