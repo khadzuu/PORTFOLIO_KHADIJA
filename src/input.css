@@ -270,3 +270,28 @@ html{
     scroll-behavior:smooth;
 
 }
+
+/* ================================================= */
+/* fade-up */
+/* ================================================= */
+@keyframes fadeup {
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to {
+        opacity:1;
+        transform: translateY(0);
+    }
+
+}
+
+.fade-up{
+    opacity:0;
+    animation:fadeup 1s ease forwards;
+}
+
+.delay-1 {
+    animation-delay: .2s
+}
