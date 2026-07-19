@@ -30,14 +30,28 @@ const mobileNavbarMenu = document.getElementById("mobileNavbarMenu");
 
 if (navMenuBtn && mobileNavbarMenu) {
 
+    // Open / Close menu
     navMenuBtn.addEventListener("click", () => {
 
         mobileNavbarMenu.classList.toggle("hidden");
 
     });
 
-}
+    // Close menu after clicking a link
+    const mobileLinks = mobileNavbarMenu.querySelectorAll("a");
 
+    mobileLinks.forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            // Hide the dropdown
+            mobileNavbarMenu.classList.add("hidden");
+
+        });
+
+    });
+
+}
 /* ========================================= */
 /* HERO MENU */
 /* ========================================= */
