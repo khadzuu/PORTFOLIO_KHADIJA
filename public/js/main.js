@@ -30,28 +30,14 @@ const mobileNavbarMenu = document.getElementById("mobileNavbarMenu");
 
 if (navMenuBtn && mobileNavbarMenu) {
 
-    // Open / Close menu
     navMenuBtn.addEventListener("click", () => {
 
         mobileNavbarMenu.classList.toggle("hidden");
 
     });
 
-    // Close menu after clicking a link
-    const mobileLinks = mobileNavbarMenu.querySelectorAll("a");
-
-    mobileLinks.forEach(link => {
-
-        link.addEventListener("click", () => {
-
-            // Hide the dropdown
-            mobileNavbarMenu.classList.add("hidden");
-
-        });
-
-    });
-
 }
+
 /* ========================================= */
 /* HERO MENU */
 /* ========================================= */
@@ -491,3 +477,39 @@ if (contactForm) {
     });
 
 }
+
+//floating effect
+const image = document.querySelector(".about-image");
+
+image.addEventListener("mousemove",(e)=>{
+
+    const rect = image.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+
+    const y = e.clientY - rect.top;
+
+    const rotateY = ((x / rect.width) - 0.5) * 50;
+
+    const rotateX = ((y / rect.height) - 0.5) * -50;
+
+    image.style.transform = `
+        perspective(1200px)
+        rotateX(${rotateX}deg)
+        rotateY(${rotateY}deg)
+        translateY(-10px)
+        scale(1.05)
+    `;
+
+    image.style.boxShadow =
+        "0 45px 100px rgba(8,51,54,.25)";
+});
+
+image.addEventListener("mouseleave",()=>{
+
+    image.style.transform =
+        "perspective(1200px) rotateX(0deg) rotateY(0deg) translateY(0px) scale(1)";
+
+    image.style.boxShadow =
+        "0 20px 40px rgba(0,0,0,.15), 0 35px 80px rgba(8,51,54,.12)";
+});

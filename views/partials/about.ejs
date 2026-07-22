@@ -1,49 +1,89 @@
 <section
     id="about"
-    class="relative bg-white -mt-8 md:-mt-12 rounded-t-[40px] z-10 min-h-screen flex items-center" >
+    class="relative min-h-screen bg-white overflow-hidden flex items-center">
+
+    <!-- Background Glow -->
+    <div
+        class="absolute -left-32 top-24 w-80 h-80 bg-[#83C5BE]/20 blur-[140px] rounded-full">
+    </div>
 
     <div
-        class="max-w-7xl mx-auto px-8 py-24">
+        class="absolute right-0 bottom-0 w-96 h-96 bg-[#083336]/10 blur-[160px] rounded-full">
+    </div>
 
-        <div
-            class="grid lg:grid-cols-2 gap-12 items-center lg:min-h-[80vh]">
+    <div class="max-w-7xl mx-auto px-8 py-24 w-full">
 
-            <!-- Left -->
+        <div class="grid lg:grid-cols-2 gap-20 items-center">
 
-            <div>
-
-         <img
-          src="/images/hero/aboutme.png"
-          alt="Profile"
-          class="w-full h-[600px] lg:h-[720px] object-cover rounded-3xl">
-            </div>
-
-            <!-- Right -->
+            <!-- ================= LEFT ================= -->
 
             <div>
-              
-                <p id="typingText"
-                 class="uppercase tracking-[0.3em] text-sm text-[#083336] font-medium h-6">
+
+                <p
+                    id="typingText"
+                    class="uppercase tracking-[0.3em] text-sm text-[#083336] font-medium h-6">
                 </p>
+
                 <br>
+
                 <h2
-                    class="text-5xl font-semibold text-[#083336] mb-8">
+                    class="text-5xl lg:text-6xl font-bold text-[#083336] mb-8">
 
                     About Me
 
                 </h2>
 
                 <p
-                    class="leading-9 text-gray-600 text-lg mb-10">
+                    class="leading-9 text-gray-600 text-lg">
 
                     Hi, I'm Khadija Murtaza Timber, a passionate Full Stack
                     Developer who enjoys building clean, responsive,
-                    and user-friendly web applications. I love creating
-                    beautiful digital experiences using JavaScript,
-                    Express.js, MongoDB, Tailwind CSS, and modern web
-                    technologies.
+                    and user-friendly web applications.
+
+                    I love creating beautiful digital experiences using
+                    HTML, CSS, JavaScript, Tailwind CSS, Node.js,
+                    Express.js, MongoDB and modern web technologies.
+
+                    I enjoy transforming ideas into elegant web applications
+                    that are fast, responsive and easy to use.
 
                 </p>
+
+            </div>
+
+            <!-- ================= RIGHT ================= -->
+
+            <div class="flex justify-center lg:justify-end">
+
+                <div class="relative">
+
+                    <!-- Main Glow -->
+                    <div
+                        class="absolute -inset-10 rounded-[45px]
+                               bg-gradient-to-br from-[#83C5BE]/40 to-[#083336]/20
+                               blur-[90px]">
+                    </div>
+
+                    <!-- Secondary Glow -->
+                    <div
+                        class="absolute -inset-4 rounded-[40px]
+                               bg-white/60 blur-3xl">
+                    </div>
+
+                    <!-- Image -->
+
+                    <img
+                        src="/images/hero/aboutme.png"
+                        alt="Profile"
+                        class="floating-image
+                               relative
+                               w-full
+                               max-w-[600px]
+                               rounded-[40px]
+                               shadow-[0_30px_80px_rgba(0,0,0,0.18)]
+                               object-cover">
+
+                </div>
 
             </div>
 
