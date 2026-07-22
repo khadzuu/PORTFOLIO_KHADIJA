@@ -28,15 +28,32 @@ window.addEventListener("scroll", () => {
 const navMenuBtn = document.getElementById("navMenuBtn");
 const mobileNavbarMenu = document.getElementById("mobileNavbarMenu");
 
-if (navMenuBtn && mobileNavbarMenu) {
+// Open / Close menu
+navMenuBtn.addEventListener("click", () => {
+    mobileNavbarMenu.classList.toggle("hidden");
+});
 
-    navMenuBtn.addEventListener("click", () => {
+// Close menu after clicking any link
+document.querySelectorAll("#mobileNavbarMenu a").forEach(link => {
 
-        mobileNavbarMenu.classList.toggle("hidden");
+    link.addEventListener("click", () => {
+
+        // Hide the dropdown
+        mobileNavbarMenu.classList.add("hidden");
+
+        // Smooth scroll
+        const target = document.querySelector(link.getAttribute("href"));
+
+        if (target) {
+            target.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        }
 
     });
 
-}
+});
 
 /* ========================================= */
 /* HERO MENU */
